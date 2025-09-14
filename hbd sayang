@@ -1,0 +1,78 @@
+# Surat
+pen.penup()
+pen.goto(200, -200)
+pen.pendown()
+pen.color("white")
+pen.begin_fill()
+for i in range(2):
+    pen.forward(100)
+    pen.left(90)
+    pen.forward(50)
+    pen.left(90)
+pen.end_fill()
+
+pen.penup()
+pen.goto(210, -230)
+pen.color("black")
+pen.write("Klik!", font=("Arial", 12, "bold"))
+
+
+# Fungsi untuk menampilkan pesan
+def show_message(x, y):
+    message = """
+Hai Sayang Happy Birthday Yaaa Maaf Ga Bisa Ngasih Banyak Banyakkk Yaaa Belom Bisa Ngasih Yang Terbaik Semoga Di Umur Kamu Yang Sudah 17 Tahuun Ini Lebih Baik dari Sebelomnyaaa I LOVE YOU Semoga Apa Yang Dimau Selalu Tersampaikan Diberikan Kesabaran dan Ketabahan Yaa Wish You All The Best Nurut Sama Orang Tua Ga Boleh Ngelawan Maaf Kalo Aku Kurang Ya Di Mata Kamu Semoga Kedepanya Aku Bisa Jadi Yang Lebih Baik Dari Sebelomnya Aku Gatau Mau Ngomong Apa Lagi Hehe Maaf Yaaa Hmmm Apalagii Yaaa Gaa Tau Ah Semoga Kamu Suka Sama Kadonyaa Yaa Maaf Ga Seberapa Aku Bingung Beli Apaaa Lagi Love You, Happy Birthday Ya Cantik
+
+From Siganteng Dari 01 january 2008
+To Cantiku 17 September 2008
+    """
+
+    popup = trtl.Turtle()
+    popup.hideturtle()
+    popup.penup()
+    popup.goto(0, -100)
+    popup.color("black")
+    popup.write(message, align="center", font=("Arial", 12, "normal"))
+
+
+screen.onclick(show_message)
+
+# Bunga Mawar
+pen.penup()
+pen.goto(-200, -200)
+pen.pendown()
+pen.speed(0)
+pen.color("red")
+
+
+def draw_petal(radius, angle):
+    for i in range(angle):
+        pen.forward(radius)
+        pen.left(360 / angle)
+
+
+# Gambar dasar mawar
+pen.begin_fill()
+draw_petal(2, 60)
+pen.end_fill()
+
+# Tambahkan kelopak-kelopak
+pen.color("red")
+pen.begin_fill()
+draw_petal(3, 60)
+pen.end_fill()
+
+pen.color("red")
+pen.begin_fill()
+draw_petal(5, 60)
+pen.end_fill()
+
+# Tangkai
+pen.penup()
+pen.goto(-200, -200)
+pen.pendown()
+pen.color("green")
+pen.pensize(3)
+pen.setheading(270)
+pen.forward(50)
+
+pen.hideturtle()
